@@ -7,8 +7,8 @@ import org.apache.commons.proxy.Invoker;
 public class MyInvoker implements Invoker {
 
 	@Override
-	public Object invoke(Object arg0, Method arg1, Object[] arg2)
-			throws Throwable {
+	public Object invoke(Object arg0, Method arg1, Object[] arg2) throws Throwable {
+//		arg1.getAnnotation(annotationClass)
 		System.out.println("proxy invoked");
 		return null;
 	}
