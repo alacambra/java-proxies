@@ -9,7 +9,6 @@ public class Pojo1 implements IPojo1 {
 	@LoadMe
 	private String value;
 	
-	private String attribute = "lalalala";
 	List<Pojo2> pojos;
 
 	public Pojo1(){}
@@ -17,12 +16,11 @@ public class Pojo1 implements IPojo1 {
 	
 	@Override
 	public String getAttribute() {
-		return attribute;
+		return value;
 	}
 
 	@Override
 	public void setAttribute(String attribute) {
-		this.attribute = attribute;
 	}
 
 	@Override
@@ -33,6 +31,11 @@ public class Pojo1 implements IPojo1 {
 	@Override
 	public void setPojos(List<Pojo2> pojos) {
 		this.pojos = pojos;
+	}
+	
+	@Override
+	public Integer getId() {
+		return id;
 	}
 }
 

@@ -12,4 +12,6 @@ public interface IPojo1 {
 
 	void setPojos(List<Pojo2> pojos);
 
+	Integer getId();
+
 }
