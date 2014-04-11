@@ -1,24 +1,24 @@
 package persistence;
 
-import org.apache.commons.proxy.ProxyFactory;
+import org.apache.commons.proxy.factory.javassist.JavassistProxyFactory;
 
 public class EntityManager {
 	
 	Buffer buffer = new Buffer();
-	ProxyFactory factory = new ProxyFactory();
+	JavassistProxyFactory factory = new JavassistProxyFactory();
 	MyInvoker invoker = new MyInvoker();
 	
 	public static void main(String[] args){
+//		new Proxy
 		EntityManager manager = new EntityManager();
-		IPojo1 p  = manager.fetch(1, IPojo1.class);
+		Pojo1 p  = manager.fetch(1, Pojo1.class);
 		p.getAttribute();
-		manager.s().getId();
+//		manager.s().getId();
 	}
 	
 	public <T> T fetch(Integer id, Class<T> clazz){
 		Class<?>[] c = {clazz};
 		T p = (T) factory.createInvokerProxy(invoker, c);
-		
 		return p;
 	}
 	
